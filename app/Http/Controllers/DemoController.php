@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 class DemoController extends Controller
 {
     function demo1(){
-        $result = User::all();
+        $result = User::with('profile')->get();
         return $result;
     }
 }
