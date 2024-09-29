@@ -8,7 +8,9 @@ use Illuminate\Http\Request;
 class DemoController extends Controller
 {
     function demo1(){
-        $result = User::with('profile')->get();
+
+        // embeded json shape
+        $result = User::with(['profile', 'post'])->get();
         return $result;
     }
 }
